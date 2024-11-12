@@ -48,4 +48,4 @@
 ---
 
 # Layered Architecture
-![Layered Architecture]()
+![Layered Architecture](https://github.com/souzafcharles/Java-Spring-Intensive/blob/main/layered_architecture.png)
