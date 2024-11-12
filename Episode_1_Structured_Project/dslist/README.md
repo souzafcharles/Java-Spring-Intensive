@@ -1,5 +1,13 @@
 # Project Requirements and Configurations
 
+## Episode 1: Structured Project
+
+### Steps:
+- Create Maven project / library;
+- Save on Github;
+- Properties files, Game entity, ORM - Game seeding;
+- Create GameMinDTO, GameRepository, GameService, and GameController
+
 ## Game Domain Model
 ![Game Domain Model](https://github.com/souzafcharles/Java-Spring-Intensive/blob/main/Episode_1_Structured_Project/dslist/game-model.png)
 

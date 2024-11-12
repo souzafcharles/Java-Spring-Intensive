@@ -2,10 +2,11 @@
 
 ### Relationships (theoretical example):
 
+### Order Domain Model
 ![Order Domain Model](https://github.com/souzafcharles/Java-Spring-Intensive/blob/main/Episode_2_Domain_and_Queries/dslist/order-model.png)
-
+### Object Model
 ![Object Model](https://github.com/souzafcharles/Java-Spring-Intensive/blob/main/Episode_2_Domain_and_Queries/dslist/object-model.png)
-
+### Relational Model
 ![Relational Model](https://github.com/souzafcharles/Java-Spring-Intensive/blob/main/Episode_2_Domain_and_Queries/dslist/relational-model.png)
 
 ## Episode 2: Domain and Queries
