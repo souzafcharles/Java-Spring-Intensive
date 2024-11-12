@@ -40,7 +40,7 @@
 - Controller, service and repository;
 - DTO pattern.
 
-### Episode 2: Domain and Queries(https://github.com/souzafcharles/Java-Spring-Intensive/tree/main/Episode_2_Domain_and_Queries/dslist)
+### Episode 2: [Domain and Queries](https://github.com/souzafcharles/Java-Spring-Intensive/tree/main/Episode_2_Domain_and_Queries/dslist)
 - N-N Relationships; 
 - Association Class and Embedded ID; 
 - SQL Queries in Spring Data JPA; 
