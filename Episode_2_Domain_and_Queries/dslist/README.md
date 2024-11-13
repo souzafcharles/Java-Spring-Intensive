@@ -16,10 +16,24 @@
 - Update database seed;
 - Create GameDTO and find Game by id;
 - Find all lists in /lists;
-- SQL Query, projection, find games by list.
+- Create SQL Query, Projection, find Games by list.
 
 ## Game Domain Model
 ![Game Domain Model](https://github.com/souzafcharles/Java-Spring-Intensive/blob/main/Episode_2_Domain_and_Queries/dslist/game-model.png)
+
+### GameRepository
+
+```java
+@Query(nativeQuery = true, value = """
+		SELECT tb_game.id, tb_game.title, tb_game.game_year AS `year`, tb_game.img_url AS imgUrl,
+		tb_game.short_description AS shortDescription, tb_belonging.position
+		FROM tb_game
+		INNER JOIN tb_belonging ON tb_game.id = tb_belonging.game_id
+		WHERE tb_belonging.list_id = :listId
+		ORDER BY tb_belonging.position
+		""")
+List<GameMinProjection> searchByList(Long listId);
+```
 
 ### import.sql
 
