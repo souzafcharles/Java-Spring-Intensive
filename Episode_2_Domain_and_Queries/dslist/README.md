@@ -14,7 +14,7 @@
 ### Steps:
 - Implement Domain Model;
 - Update database seed;
-- GameDTO, find game by id;
+- Create GameDTO and find Game by id;
 - Find all lists in /lists;
 - SQL Query, projection, find games by list.
 
