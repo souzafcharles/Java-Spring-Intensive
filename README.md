@@ -47,6 +47,12 @@
 - Projections.
 
 ### Episode 3: Approval and CORS.
+- Project profiles (Dev, Test, and Prod);
+- Local environment with Docker Compose;
+- Local staging process;
+- CI/CD deployment process;
+- CORS configuration.
+
 ### Episode 4: Special Endpoint.
 ### Episode 5: Summary and Learning Conclusion.
 
