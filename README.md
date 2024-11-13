@@ -46,7 +46,7 @@
 - SQL Queries in Spring Data JPA; 
 - Projections.
 
-### Episode 3: Approval and CORS.
+### Episode 3: [Approval and CORS](https://github.com/souzafcharles/Java-Spring-Intensive/tree/main/Episode_3_Approval_and_CORS/dslist)
 - Project profiles (Dev, Test, and Prod);
 - Local environment with Docker Compose;
 - Local staging process;
