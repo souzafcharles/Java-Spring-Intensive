@@ -64,3 +64,19 @@ INSERT INTO tb_belonging (list_id, game_id, position) VALUES (2, 8, 2);
 INSERT INTO tb_belonging (list_id, game_id, position) VALUES (2, 9, 3);
 INSERT INTO tb_belonging (list_id, game_id, position) VALUES (2, 10, 4);
 ```
+
+### HTTP Methods
+
+```JSON
+Game
+GET http://localhost:8080/games  
+
+Game by id
+GET http://localhost:8080/games/1
+
+Game list
+http://localhost:8080/lists
+
+Game by list
+http://localhost:8080/lists/1/games
+```
