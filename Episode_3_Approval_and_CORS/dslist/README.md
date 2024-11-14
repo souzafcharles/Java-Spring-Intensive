@@ -103,7 +103,7 @@ spring.jpa.hibernate.ddl-auto=none
 ```properties
 java.runtime.version=21
 ```
-### WebConfig
+### WebConfig class
 ```java
 @Configuration
 public class WebConfig {
@@ -120,7 +120,6 @@ public class WebConfig {
 			}
 		};
 	}
-	
 }
 ```
 ### GameRepository
