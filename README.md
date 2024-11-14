@@ -53,10 +53,15 @@
 - CI/CD deployment process;
 - CORS configuration.
 
-### Episode 4: Special Endpoint.
+### Episode 4: [Special Endpoint](https://github.com/souzafcharles/Java-Spring-Intensive/tree/main/Episode_4_Special_Endpoint/dslist)
+- Design and implementation of a special endpoint;
+- Update operation in Spring;
+- Operations with List;
+- HTTP verb and idempotency.
+
 ### Episode 5: Summary and Learning Conclusion.
 
 ---
 
-# Layered Architecture
+# Project Layered Architecture
 ![Layered Architecture](https://github.com/souzafcharles/Java-Spring-Intensive/blob/main/layered_architecture.png)
