@@ -3,7 +3,6 @@ package com.souza.charles.dslist.entities;
 import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
-
 import java.util.Objects;
 
 @Entity
