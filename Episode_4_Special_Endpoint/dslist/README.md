@@ -3,16 +3,19 @@
 ### Steps:
 #### Special endpoint:
 - Improvement the design and implementation of a special endpoint;
+- Replacement of item positions logic;
 - Set up HTTP verb and idempotency.
 
-### Relocation of item positions
+## Code Snippets
+
+### GameListController (Replacement of item positions)
 ```java
 @PostMapping(value = "/{listId}/replacement")
-public void move(@PathVariable Long listId, @RequestBody ReplacementDTObody) {
+public void move(@PathVariable Long listId, @RequestBody ReplacementDTO body) {
   gameListService.move(listId, body.getSourceIndex(), body.getDestinationIndex());
 }
 ```
-### Relocation of item positions
+### GameListService Replacement of item positions)
 ```java
 @Transactional
 public void move(Long listId, int sourceIndex, int destinationIndex) {
@@ -27,11 +30,29 @@ public void move(Long listId, int sourceIndex, int destinationIndex) {
 }
 ```
 
-### Relocation of item positions
+### GameListRepository (Replacement of item positions)
+
 ```java
 @Modifying
-@Query(nativeQuery = true,
-    value = "UPDATE tb_belonging SET position = :newPosition
-    WHERE list_id = :listId AND game_id = :gameId ")
-    void updateBelongingPosition(Long listId, Long gameId, Integer newPosition);
+@Query(nativeQuery = true, value = "UPDATE tb_belonging SET position = :newPosition WHERE list_id = :listId AND game_id = :gameId")
+void updateBelongingPosition(Long listId, Long gameId, Integer newPosition);
+```
+
+### H2 Query 
+```sql
+SELECT TB_BELONGING .*, TB_GAME.TITLE FROM TB_BELONGING
+INNER JOIN TB_GAME ON TB_GAME.ID = TB_BELONGING.GAME_ID
+WHERE LIST_ID = 2
+ORDER BY POSITION
+```
+
+### HTTP Methods
+
+```JSON
+POST http://localhost:8080/lists/2/replacement 
+Body -> raw -> JSON
+{
+"sourceIndex": 3,
+"destinationIndex": 1
+}
 ```
