@@ -8,23 +8,16 @@
 
 :triangular_flag_on_post: Prof. Dr. Nelio Alves - [Dev Superior](https://devsuperior.com.br)
 
-:black_nib: IDE used: IntelliJ IDEA
+:black_nib: IDE used: `IntelliJ IDEA`
 
-:coffee: Java version: 2️⃣1️⃣
+:coffee: Java | version: `21`
 
-:leaves: Spring Boot version: 3️⃣.3️⃣.5️⃣
+:leaves: Spring Boot | version: `3.3.5`
 
----
-### What was learned:
-- Building a Java Project with Spring Boot;
-- Back-end web and REST API;
-- Layered development Pattern;
-- Implementing a Domain Model;
-- Accessing a database;
-- Implementing business logic;
-- Practical application of data structures;
-- Best practices and Patterns;
-- Setting up a local environment with Docker and Docker Compose.
+🗄️ H2 Database Engine | version: `23.232`
+
+👩‍🚀 Postman | version: `11.19`
+
  
 ---
 
@@ -60,8 +53,20 @@
 - HTTP verb and idempotency.
 
 ### Episode 5: Summary and Learning Conclusion.
-
+#### What was learned:
+- Building a Java Project with Spring Boot;
+- Back-end Web and REST API;
+- Layered development Pattern;
+- Implementing a Domain Model;
+- Accessing a database;
+- Implementing business logic;
+- Practical application of data structures;
+- Best practices and Patterns;
+- Setting up a local environment with Docker and Docker Compose.
 ---
 
 # Project Layered Architecture
 ![Layered Architecture](https://github.com/souzafcharles/Java-Spring-Intensive/blob/main/layered_architecture.png)
+
+---
+### :link: [Course Access](https://devsuperior.com.br/ijs-inscricao-org)
