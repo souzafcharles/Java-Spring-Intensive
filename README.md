@@ -56,12 +56,12 @@
 #### What was learned:
 - Building a Java Project with Spring Boot;
 - Back-end Web and REST API;
-- Layered development Pattern;
+- Layered Development Pattern;
 - Implementing a Domain Model;
-- Accessing a database;
-- Implementing business logic;
-- Practical application of data structures;
-- Best practices and Patterns;
-- Setting up a local environment with Docker and Docker Compose.
+- Accessing a Database;
+- Implementing Business Logic;
+- Practical Application of Data Structures;
+- Best Practices and Patterns;
+- Setting up a Local Environment with Docker and Docker Compose.
 ***
 ### :link: [Course Access](https://devsuperior.com.br/ijs-inscricao-org)
