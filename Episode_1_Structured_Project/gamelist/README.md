@@ -9,7 +9,7 @@
     - Java 21;
     - Packing JAR;
     - Dependencies: Spring Web, Spring Data JPA, H2 Database and PostgresSQL Driver.
-####1.2 Plug-in Maven:
+#### 1.2 Plug-in Maven:
 ```xml
 <plugin>
 	<groupId>org.apache.maven.plugins</groupId>
