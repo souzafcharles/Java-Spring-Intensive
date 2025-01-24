@@ -1,7 +1,7 @@
 # Episode 1: Structured Project
 ## Project Requirements and Configurations:
-### Game Domain Model:
-![Game Domain Model](https://github.com/souzafcharles/Java-Spring-Intensive/blob/main/Episode_1_Structured_Project/gamelist/game-model.png)
+### Game Domain Model Entities:
+![Game Domain Model Entities](https://github.com/souzafcharles/Java-Spring-Intensive/blob/main/Episode_1_Structured_Project/gamelist/game-model.png)
 ### Steps to Follow and Documentation:
 #### 1. Requirements Specification:
 - Spring Initializr:
@@ -53,21 +53,20 @@ spring.jpa.properties.hibernate.format_sql=true
 - Create the `GameMinDTO` Class;
 - Basic Attributes (id, title, year, imgUrl and shortDescription);
 - Implement a no-argument constructor;
-- Implement a constructor that accepts a Game entity object to initialize its attributes;
+- Implement a constructor that accepts a `Game` entity object to initialize its attributes;
 - Getters & Setters;
-- hashCode & equals;
 - Serializable.
 #### 4.3 Repository Class Requirement for Game:
 - Extends JpaRepository<Game, Long>.
 #### 4.4 Game Service Class Requirements for GameMinDTO:
 - Use `@Service` annotation;
-- Inject CategoryRepository using `@Autowired`;
-- Implement methods to retrieve all categories (findAll);
+- Inject `GameRepository` using `@Autowired`;
+- Implement methods to retrieve all categories (`findAll`);
 #### 4.5 Game Controller Class Requirements for GameMinDTO:
 - Use `@RestController` annotation.
 - Map requests (`@RequestMapping`) to the `/games` endpoint;
-- Inject CategoryService using `@Autowired`;
-- Implement a method to handle GET requests and return all categories (`@GetMapping`).
+- Inject `GameService` using `@Autowired`;
+- Implement a method to handle `GET` requests and return all categories (`@GetMapping`).
 #### 5 Database Seeding with Games in the import.sql File and Persist Objects:
 ```sql
 INSERT INTO tb_game (title, score, game_year, genre, platforms, img_url, short_description, long_description) VALUES ('Mass Effect Trilogy', 4.8, 2012, 'Role-playing (RPG), Shooter', 'XBox, Playstation, PC', 'https://github.com/souzafcharles/Java-Spring-Intensive/blob/main/Episode_1_Structured_Project/gamelist/src/main/resources/static/img/1.png', 'Embark on an intergalactic adventure filled with choice, consequence, and epic battles.', 'The Mass Effect Trilogy offers a deep narrative-driven RPG experience where every decision you make shapes the fate of the galaxy. Build relationships, engage in strategic combat, and uncover a rich universe teeming with mysteries and conflicts.');

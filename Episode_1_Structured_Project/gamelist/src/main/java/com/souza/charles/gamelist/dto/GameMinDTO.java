@@ -8,7 +8,12 @@ package com.souza.charles.gamelist.dto;
 
 import com.souza.charles.gamelist.entities.Game;
 
-public class GameMinDTO {
+import java.io.Serial;
+import java.io.Serializable;
+
+public class GameMinDTO implements Serializable {
+    @Serial
+    private static final long serialVersionUID = 1L;
     private Long id;
     private String title;
     private Integer year;
