@@ -2,13 +2,12 @@
 ## Project Requirements and Configurations:
 ### 1. Relationships:
 #### 1.1 Game Domain Model Entities:
-![Order Domain Model Entities](https://github.com/souzafcharles/Java-Spring-Intensive/blob/main/Episode_2_Domain_and_Queries/gamelist/order-model.png)
+![Order Domain Model Entities](https://github.com/souzafcharles/Java-Spring-Intensive/blob/main/Episode_2_Domain_and_Queries/gamelist/game-model.png)
 #### 1.2 Object Relational Model:
 ![Object Relational Model](https://github.com/souzafcharles/Java-Spring-Intensive/blob/main/Episode_2_Domain_and_Queries/gamelist/object-relational.png)
 #### 1.3 Table Relational Model:
 ![Table Relational Model](https://github.com/souzafcharles/Java-Spring-Intensive/blob/main/Episode_2_Domain_and_Queries/gamelist/table-relational.png)
 ***
-## Steps to Follow and Documentation:
 ### 2. Customised SQL Query in the GameRepository Interface:
 ```java
 @Query(nativeQuery = true, value = """
