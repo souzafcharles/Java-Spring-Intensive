@@ -7,6 +7,7 @@ package com.souza.charles.gamelist.dto;
  */
 
 import com.souza.charles.gamelist.entities.Game;
+import com.souza.charles.gamelist.projections.GameMinProjection;
 
 import java.io.Serial;
 import java.io.Serializable;
@@ -29,6 +30,14 @@ public class GameMinDTO implements Serializable {
         year = entity.getYear();
         imgUrl = entity.getImgUrl();
         shortDescription = entity.getShortDescription();
+    }
+
+    public GameMinDTO(GameMinProjection projection) {
+        id = projection.getId();
+        title = projection.getTitle();
+        year = projection.getGameYear();
+        imgUrl = projection.getImgUrl();
+        shortDescription = projection.getShortDescription();
     }
 
     public Long getId() {

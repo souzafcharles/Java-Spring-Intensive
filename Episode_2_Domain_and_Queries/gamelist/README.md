@@ -1,11 +1,13 @@
 # Episode 2: Domain and Queries
 ## Project Requirements and Configurations:
 ### 1. Relationships:
-#### 1.1 Game Domain Model Entities:
-![Order Domain Model Entities](https://github.com/souzafcharles/Java-Spring-Intensive/blob/main/Episode_2_Domain_and_Queries/gamelist/game-model.png)
+#### 1.1 Game Domain Entities Model:
+![Order Domain Entities Model](https://github.com/souzafcharles/Java-Spring-Intensive/blob/main/Episode_2_Domain_and_Queries/gamelist/game-model.png)
+***
 #### 1.2 Object Relational Model:
 ![Object Relational Model](https://github.com/souzafcharles/Java-Spring-Intensive/blob/main/Episode_2_Domain_and_Queries/gamelist/object-relational.png)
 #### 1.3 Table Relational Model:
+***
 ![Table Relational Model](https://github.com/souzafcharles/Java-Spring-Intensive/blob/main/Episode_2_Domain_and_Queries/gamelist/table-relational.png)
 ***
 ### 2. Customised SQL Query in the GameRepository Interface:
@@ -50,25 +52,168 @@ INSERT INTO tb_belonging (list_id, game_id, position) VALUES (2, 9, 3);
 INSERT INTO tb_belonging (list_id, game_id, position) VALUES (2, 10, 4);
 ```
 ***
-### 4. Retrieving GameMinDTO Data via Spring Boot RESTful API:
-```JSON
-Game
-GET http://localhost:8080/games  
+### 4. Retrieving GameMinDTO and GameDTO Data via Spring Boot RESTful API:
 
-Game by id
-GET http://localhost:8080/games/1
-
-Game list
-http://localhost:8080/lists
-
-Game by list
-http://localhost:8080/lists/1/games
+#### 4.1 Game:
+```json
+GET Request http://localhost:8080/games
 ```
+```json
+[
+  {
+    "id": 1,
+    "title": "Mass Effect Trilogy",
+    "year": 2012,
+    "imgUrl": "https://github.com/souzafcharles/Java-Spring-Intensive/blob/main/Episode_1_Structured_Project/gamelist/src/main/resources/static/img/1.png",
+    "shortDescription": "Embark on an intergalactic adventure filled with choice, consequence, and epic battles."
+  },
+  {
+    "id": 2,
+    "title": "Red Dead Redemption 2",
+    "year": 2018,
+    "imgUrl": "https://github.com/souzafcharles/Java-Spring-Intensive/blob/main/Episode_1_Structured_Project/gamelist/src/main/resources/static/img/2.png",
+    "shortDescription": "A gripping tale of loyalty and survival in the dying days of the Wild West."
+  },
+  {
+    "id": 3,
+    "title": "The Witcher 3: Wild Hunt",
+    "year": 2014,
+    "imgUrl": "https://github.com/souzafcharles/Java-Spring-Intensive/blob/main/Episode_1_Structured_Project/gamelist/src/main/resources/static/img/3.png",
+    "shortDescription": "A legendary journey of a monster hunter in a world rife with danger and intrigue."
+  },
+  {
+    "id": 4,
+    "title": "Sekiro: Shadows Die Twice",
+    "year": 2019,
+    "imgUrl": "https://github.com/souzafcharles/Java-Spring-Intensive/blob/main/Episode_1_Structured_Project/gamelist/src/main/resources/static/img/4.png",
+    "shortDescription": "A challenging samurai epic that tests your skills and determination."
+  },
+  {
+    "id": 5,
+    "title": "Ghost of Tsushima",
+    "year": 2012,
+    "imgUrl": "https://github.com/souzafcharles/Java-Spring-Intensive/blob/main/Episode_1_Structured_Project/gamelist/src/main/resources/static/img/5.png",
+    "shortDescription": "A tale of honor and sacrifice set in feudal Japan."
+  },
+  {
+    "id": 6,
+    "title": "Super Mario World",
+    "year": 1990,
+    "imgUrl": "https://github.com/souzafcharles/Java-Spring-Intensive/blob/main/Episode_1_Structured_Project/gamelist/src/main/resources/static/img/6.png",
+    "shortDescription": "A timeless classic that redefined platform gaming."
+  },
+  {
+    "id": 7,
+    "title": "Hollow Knight",
+    "year": 2017,
+    "imgUrl": "https://github.com/souzafcharles/Java-Spring-Intensive/blob/main/Episode_1_Structured_Project/gamelist/src/main/resources/static/img/7.png",
+    "shortDescription": "A hauntingly beautiful journey into a mysterious underground world."
+  },
+  {
+    "id": 8,
+    "title": "Ori and the Blind Forest",
+    "year": 2015,
+    "imgUrl": "https://github.com/souzafcharles/Java-Spring-Intensive/blob/main/Episode_1_Structured_Project/gamelist/src/main/resources/static/img/8.png",
+    "shortDescription": "An emotional tale of bravery and friendship in a vibrant forest."
+  },
+  {
+    "id": 9,
+    "title": "Cuphead",
+    "year": 2017,
+    "imgUrl": "https://github.com/souzafcharles/Java-Spring-Intensive/blob/main/Episode_1_Structured_Project/gamelist/src/main/resources/static/img/9.png",
+    "shortDescription": "A visually striking game inspired by 1930s cartoons."
+  },
+  {
+    "id": 10,
+    "title": "Sonic CD",
+    "year": 1993,
+    "imgUrl": "https://github.com/souzafcharles/Java-Spring-Intensive/blob/main/Episode_1_Structured_Project/gamelist/src/main/resources/static/img/10.png",
+    "shortDescription": "A fast-paced adventure through time with Sonic the Hedgehog."
+  }
+]
+```
+#### 4.2 Game by Id:
+```json
+GET Request http://localhost:8080/games/6
+```
+```json
+{
+  "id": 6,
+  "title": "Super Mario World",
+  "year": 1990,
+  "genre": "Platform",
+  "platforms": "Super Ness, PC",
+  "score": 4.7,
+  "imgUrl": "https://github.com/souzafcharles/Java-Spring-Intensive/blob/main/Episode_1_Structured_Project/gamelist/src/main/resources/static/img/6.png",
+  "shortDescription": "A timeless classic that redefined platform gaming.",
+  "longDescription": "Join Mario and Luigi on an epic adventure through Dinosaur Land to rescue Princess Peach from Bowser. Super Mario World features creative level designs and unforgettable gameplay."
+}
+```
+#### 4.3 GameList:
+```json
+GET Request http://localhost:8080/lists
+```
+```json
+[
+  {
+    "id": 1,
+    "name": "Adventure and RPG"
+  },
+  {
+    "id": 2,
+    "name": "Platform Gaming"
+  }
+]
+```
+#### 4.4 Game by List:
+```json
+GET Request http://localhost:8080/lists/2/games
+```
+```json
+[
+  {
+    "id": 6,
+    "title": "Super Mario World",
+    "year": 1990,
+    "imgUrl": "https://github.com/souzafcharles/Java-Spring-Intensive/blob/main/Episode_1_Structured_Project/gamelist/src/main/resources/static/img/6.png",
+    "shortDescription": "A timeless classic that redefined platform gaming."
+  },
+  {
+    "id": 7,
+    "title": "Hollow Knight",
+    "year": 2017,
+    "imgUrl": "https://github.com/souzafcharles/Java-Spring-Intensive/blob/main/Episode_1_Structured_Project/gamelist/src/main/resources/static/img/7.png",
+    "shortDescription": "A hauntingly beautiful journey into a mysterious underground world."
+  },
+  {
+    "id": 8,
+    "title": "Ori and the Blind Forest",
+    "year": 2015,
+    "imgUrl": "https://github.com/souzafcharles/Java-Spring-Intensive/blob/main/Episode_1_Structured_Project/gamelist/src/main/resources/static/img/8.png",
+    "shortDescription": "An emotional tale of bravery and friendship in a vibrant forest."
+  },
+  {
+    "id": 9,
+    "title": "Cuphead",
+    "year": 2017,
+    "imgUrl": "https://github.com/souzafcharles/Java-Spring-Intensive/blob/main/Episode_1_Structured_Project/gamelist/src/main/resources/static/img/9.png",
+    "shortDescription": "A visually striking game inspired by 1930s cartoons."
+  },
+  {
+    "id": 10,
+    "title": "Sonic CD",
+    "year": 1993,
+    "imgUrl": "https://github.com/souzafcharles/Java-Spring-Intensive/blob/main/Episode_1_Structured_Project/gamelist/src/main/resources/static/img/10.png",
+    "shortDescription": "A fast-paced adventure through time with Sonic the Hedgehog."
+  }
+]
+```
+
 ***
 ### Steps Checklist:
-- Implement Domain Model;
-- Update Database Seed;
-- Create GameDTO and Find Game by Id;
-- Find All Lists in /lists;
-- Create SQL Query, Projection, Find Games by List.
+:ballot_box_with_check: Implement Domain Model;<br/>
+:ballot_box_with_check: Update Database Seed;<br/>
+:ballot_box_with_check: Create GameDTO and Find Game by Id;<br/>
+:ballot_box_with_check: Find All Lists in /lists;<br/>
+:ballot_box_with_check: Create SQL Query, Projection, Find Games by List.
 
