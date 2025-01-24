@@ -5,14 +5,14 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>3.3.5</version>
+		<version>3.4.2</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.souza.charles</groupId>
-	<artifactId>dslist </artifactId>
+	<artifactId>gamelist</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>dslist </name>
-	<description>Java Spring Intensive Course</description>
+	<name>gamelist</name>
+	<description>Course: Java Spring Intensive. Presented by Prof. Dr. Nelio Alves - DevSuperior.</description>
 	<url/>
 	<licenses>
 		<license/>
@@ -59,13 +59,13 @@
 	<build>
 		<plugins>
 			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-resources-plugin</artifactId>
 				<version>3.1.0</version> <!--$NO-MVN-MAN-VER$ -->
-			</plugin>
-			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
 		</plugins>
 	</build>
