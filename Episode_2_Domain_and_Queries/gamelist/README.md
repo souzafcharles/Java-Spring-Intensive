@@ -10,20 +10,103 @@
 ***
 ![Table Relational Model](https://github.com/souzafcharles/Java-Spring-Intensive/blob/main/Episode_2_Domain_and_Queries/gamelist/table-relational.png)
 ***
-### 2. Customised SQL Query in the GameRepository Interface:
+### 2. Belonging and BelongingPK Entities Classes and Many-to-Many Association with Extra Attributes:
+#### 2.1 Entity Class Requirements for BelongingPK:
+- Create the `BelongingPK` Entity Class;
+- Annotate the class with `@Embeddable` to indicate it is an embeddable key class.
+- Define `Game` and `GameList` attributes as `@ManyToOne` associations, annotated with `@JoinColumn` to define foreign key columns:
+    - game → mapped to game_id.
+    - list → mapped to list_id.
+- Getters & Setters;
+- hashCode & equals;
+- Serializable.
+#### 2.2 Entity Class Requirements for Belonging:
+- Create the `Beloging` Entity Class;
+- Annotate the class with `@Entity` and `@Table`(name = "tb_belonging") to map it to the database table;
+- Basic Attributes;
+- Annotate `@Id` and `@GeneratedValue` for the primary key, and `@Column` for other fields;
+- Constructors;
+- Getters & Setters;
+- hashCode & equals;
+- Serializable.
+***
+### 3. GameDTO Entity,
+#### 3.1 Entity Class Requirements for GameDTO:
+- Create the `GameDTO` Class;
+- Basic Attributes;
+- Implement a no-argument constructor;
+- Implement a constructor that takes a `Game` entity object and uses `BeanUtils.copyProperties` to initialize the fields.
+- Getters & Setters;
+- Serializable.
+***
+### 4. Game Entity, Repository, Service and Resource Classes:
+#### 4.1 Game Service Class Requirements for GameDTO and GameMinDTO:
+- Use `@Service` annotation;
+- Inject `GameRepository` using `@Autowired`;
+- Implement methods to retrieve `all Games` (`findAll`);
+- Use `@Transactional`(readOnly = true) to ensure the method runs within a read-only transaction.
+- Implement methods to retrieve `Game by IDs` (`findById`);
+- Implement methods to retrieve `Games by Game List` (`findByGameList`).
+- Implement the logic to retrieve games by list ID, and map the result to a list of `GameMinDTO` objects.
+#### 4.2 Game Controller Class Requirements for GameDTO and GameMinDTO:
+- Use `@RestController` annotation.
+- Map requests (`@RequestMapping`) to the `/games` endpoint;
+- Inject `GameService` using `@Autowired`;
+- Implement a method to handle `GET` requests and return all games (`@GetMapping`).
+- Implement a method to handle `GET` requests and return games find by id (`@GetMapping(value = "/{id}`")
+***
+### 5. GameList Entity, Repository, Service and Resource Classes:
+#### 5.1 Entity Class Requirements for GameList:
+- Create the `GameList` Entity Class;
+- Annotate the class with `@Entity` and `@Table`(name = "tb_game_list") to map it to the database table;
+- Basic Attributes;
+- Annotate `@Id` and `@GeneratedValue` for the primary key, and `@Column` for other fields;
+- Constructors;
+- Getters & Setters;
+- hashCode & equals;
+- Serializable.
+#### 5.2 Repository Class Requirement for GameList:
+- Create an interface that extends JpaRepository for the Game entity (`extends JpaRepository<GameList, Long>;`);
+#### 5.3 GameList Service Class Requirements for GameDTO and GameMinDTO:
+- Use `@Service` annotation;
+- Inject `GameListRepository` using `@Autowired`;
+- Implement Methods to Retrieve All Game `Lists` (`findAll`);
+- Use `@Transactional`(readOnly = true) to ensure the method runs within a read-only transaction;
+- Map the result to a list of `GameListDTO objects;
+- Implement Method to Retrieve a `GameList` by ID (`findById`);
+- Find the `GameList` by ID, and map it to a `GameListDTO` object.
+- Implement methods to retrieve all categories (`findByGameList`)
+- Implement the logic to retrieve games by game list, and map the result to a list of GameDTO or GameMinDTO objects.
+#### 5.4 GameList Controller Class Requirements for GameDTO and GameMinDTO:
+- Use `@RestController` annotation.
+- Map requests (`@RequestMapping`) to the `/games` endpoint;
+- Inject `GameService` using `@Autowired`;
+- Implement a method to handle `GET` requests and return all games (`@GetMapping`).
+- Implement a method to handle `GET` requests and return games find by id (`@GetMapping(value = "/{id}`")
+***
+### 6. Interface Requirements for GameMinProjection:
+#### 6.1 Declare the Interface GameMinProjection:
+- Define the interface with the relevant methods to retrieve only the necessary fields.
+- Include Methods to Get Each Field: provide methods to get id, title, gameYear, imgUrl, shortDescription, and position.
+#### 6.2 Repository Class Requirement for Game:
+- Define Custom Queries with `@Query` Annotation;
+- In this case, a custom native query is defined to retrieve games by list ID, ordered by their position in the list:
 ```java
-@Query(nativeQuery = true, value = """
-		SELECT tb_game.id, tb_game.title, tb_game.game_year AS `year`, tb_game.img_url AS imgUrl,
-		tb_game.short_description AS shortDescription, tb_belonging.position
-		FROM tb_game
-		INNER JOIN tb_belonging ON tb_game.id = tb_belonging.game_id
-		WHERE tb_belonging.list_id = :listId
-		ORDER BY tb_belonging.position
-		""")
-List<GameMinProjection> searchByList(Long listId);
+@Repository
+public interface GameRepository extends JpaRepository<Game, Long> {
+    @Query(nativeQuery = true, value = """
+			SELECT tb_game.id, tb_game.title, tb_game.game_year AS gameYear, tb_game.img_url AS imgUrl,
+			tb_game.short_description AS shortDescription, tb_belonging.position
+			FROM tb_game
+			INNER JOIN tb_belonging ON tb_game.id = tb_belonging.game_id
+			WHERE tb_belonging.list_id = :listId
+			ORDER BY tb_belonging.position
+				""")
+    List<GameMinProjection> searchByList(Long listId);
+}
 ```
 ***
-### 3. Database Seeding with Games in the import.sql File and Persist Objects:
+### 7. Database Seeding with Games, Belonging and GameList tables in the import.sql File and Persist Objects:
 ```sql
 INSERT INTO tb_game_list (name) VALUES ('Adventure and RPG');
 INSERT INTO tb_game_list (name) VALUES ('Platform Gaming');
@@ -52,9 +135,8 @@ INSERT INTO tb_belonging (list_id, game_id, position) VALUES (2, 9, 3);
 INSERT INTO tb_belonging (list_id, game_id, position) VALUES (2, 10, 4);
 ```
 ***
-### 4. Retrieving GameMinDTO and GameDTO Data via Spring Boot RESTful API:
-
-#### 4.1 Game:
+### 8. Retrieving GameMinDTO and GameDTO Data via Spring Boot RESTful API:
+#### 8.1 Game:
 ```json
 GET Request http://localhost:8080/games
 ```
@@ -132,7 +214,7 @@ GET Request http://localhost:8080/games
   }
 ]
 ```
-#### 4.2 Game by Id:
+#### 8.2 Game by Id:
 ```json
 GET Request http://localhost:8080/games/6
 ```
@@ -149,7 +231,7 @@ GET Request http://localhost:8080/games/6
   "longDescription": "Join Mario and Luigi on an epic adventure through Dinosaur Land to rescue Princess Peach from Bowser. Super Mario World features creative level designs and unforgettable gameplay."
 }
 ```
-#### 4.3 GameList:
+#### 8.3 GameList:
 ```json
 GET Request http://localhost:8080/lists
 ```
@@ -165,7 +247,7 @@ GET Request http://localhost:8080/lists
   }
 ]
 ```
-#### 4.4 Game by List:
+#### 8.4 Game by List:
 ```json
 GET Request http://localhost:8080/lists/2/games
 ```
@@ -208,12 +290,15 @@ GET Request http://localhost:8080/lists/2/games
   }
 ]
 ```
-
 ***
 ### Steps Checklist:
 :ballot_box_with_check: Implement Domain Model;<br/>
 :ballot_box_with_check: Update Database Seed;<br/>
 :ballot_box_with_check: Create GameDTO and Find Game by Id;<br/>
 :ballot_box_with_check: Find All Lists in /lists;<br/>
-:ballot_box_with_check: Create SQL Query, Projection, Find Games by List.
-
+:ballot_box_with_check: Create SQL Query, Projection, Find Games by List;<br/>
+:ballot_box_with_check: Implement GameMinDTO Class;<br/>
+:ballot_box_with_check: Implement Services and Repositories: GameService, GameRepository and GameListRepository;<br/>
+:ballot_box_with_check: Define @Query Annotations in Repositories for Custom Queries;<br/>
+:ballot_box_with_check: Create RestController for Game and GameList;<br/>
+:ballot_box_with_check: Implement GET Methods to Retrieve Data via RESTful API.
