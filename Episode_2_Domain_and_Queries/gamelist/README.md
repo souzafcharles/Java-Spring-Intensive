@@ -13,10 +13,10 @@
 ### 2. Belonging and BelongingPK Entities Classes and Many-to-Many Association with Extra Attributes:
 #### 2.1 Entity Class Requirements for BelongingPK:
 - Create the `BelongingPK` Entity Class;
-- Annotate the class with `@Embeddable` to indicate it is an embeddable key class.
+- Annotate the class with `@Embeddable` to indicate it is an embeddable key class;
 - Define `Game` and `GameList` attributes as `@ManyToOne` associations, annotated with `@JoinColumn` to define foreign key columns:
-    - game → mapped to game_id.
-    - list → mapped to list_id.
+    - game → mapped to game_id;
+    - list → mapped to list_id;
 - Getters & Setters;
 - hashCode & equals;
 - Serializable.
@@ -44,16 +44,16 @@
 - Use `@Service` annotation;
 - Inject `GameRepository` using `@Autowired`;
 - Implement methods to retrieve `all Games` (`findAll`);
-- Use `@Transactional`(readOnly = true) to ensure the method runs within a read-only transaction.
+- Use `@Transactional`(readOnly = true) to ensure the method runs within a read-only transaction;
 - Implement methods to retrieve `Game by IDs` (`findById`);
-- Implement methods to retrieve `Games by Game List` (`findByGameList`).
+- Implement methods to retrieve `Games by Game List` (`findByGameList`);
 - Implement the logic to retrieve games by list ID, and map the result to a list of `GameMinDTO` objects.
 #### 4.2 Game Controller Class Requirements for GameDTO and GameMinDTO:
-- Use `@RestController` annotation.
+- Use `@RestController` annotation;
 - Map requests (`@RequestMapping`) to the `/games` endpoint;
 - Inject `GameService` using `@Autowired`;
-- Implement a method to handle `GET` requests and return all games (`@GetMapping`).
-- Implement a method to handle `GET` requests and return games find by id (`@GetMapping(value = "/{id}`")
+- Implement a method to handle `GET` requests and return all games (`@GetMapping`);
+- Implement a method to handle `GET` requests and return games find by id (`@GetMapping(value = "/{id}`").
 ***
 ### 5. GameList Entity, Repository, Service and Resource Classes:
 #### 5.1 Entity Class Requirements for GameList:
@@ -66,7 +66,7 @@
 - hashCode & equals;
 - Serializable.
 #### 5.2 Repository Class Requirement for GameList:
-- Create an interface that extends JpaRepository for the Game entity (`extends JpaRepository<GameList, Long>;`);
+- Create an interface that extends JpaRepository for the Game entity (`extends JpaRepository<GameList, Long>;`).
 #### 5.3 GameList Service Class Requirements for GameDTO and GameMinDTO:
 - Use `@Service` annotation;
 - Inject `GameListRepository` using `@Autowired`;
@@ -74,19 +74,19 @@
 - Use `@Transactional`(readOnly = true) to ensure the method runs within a read-only transaction;
 - Map the result to a list of `GameListDTO objects;
 - Implement Method to Retrieve a `GameList` by ID (`findById`);
-- Find the `GameList` by ID, and map it to a `GameListDTO` object.
-- Implement methods to retrieve all categories (`findByGameList`)
+- Find the `GameList` by ID, and map it to a `GameListDTO` object;
+- Implement methods to retrieve all categories (`findByGameList`);
 - Implement the logic to retrieve games by game list, and map the result to a list of GameDTO or GameMinDTO objects.
 #### 5.4 GameList Controller Class Requirements for GameDTO and GameMinDTO:
-- Use `@RestController` annotation.
+- Use `@RestController` annotation;
 - Map requests (`@RequestMapping`) to the `/games` endpoint;
 - Inject `GameService` using `@Autowired`;
-- Implement a method to handle `GET` requests and return all games (`@GetMapping`).
-- Implement a method to handle `GET` requests and return games find by id (`@GetMapping(value = "/{id}`")
+- Implement a method to handle `GET` requests and return all games (`@GetMapping`);
+- Implement a method to handle `GET` requests and return games find by id (`@GetMapping(value = "/{id}"`).
 ***
 ### 6. Interface Requirements for GameMinProjection:
 #### 6.1 Declare the Interface GameMinProjection:
-- Define the interface with the relevant methods to retrieve only the necessary fields.
+- Define the interface with the relevant methods to retrieve only the necessary fields;
 - Include Methods to Get Each Field: provide methods to get id, title, gameYear, imgUrl, shortDescription, and position.
 #### 6.2 Repository Class Requirement for Game:
 - Define Custom Queries with `@Query` Annotation;
