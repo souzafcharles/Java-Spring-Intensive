@@ -3,7 +3,7 @@ package com.souza.charles.gamelist.controllers;
   Course title: Java Spring Intensive
   Instructor: Prof. Dr. Nelio Alves - Dev Superior
   Project done by: Charles Fernandes de Souza
-  Date: January 23, 2025
+  Date: January 25, 2025
  */
 
 import com.souza.charles.gamelist.dto.GameDTO;
@@ -30,7 +30,7 @@ public class GameController {
     }
 
     @GetMapping(value = "/{id}")
-    public GameDTO findById(@PathVariable Long id){
-        return gameService.findByID(id);
+    public GameDTO findById(@PathVariable Long id) {
+        return gameService.findById(id);
     }
 }

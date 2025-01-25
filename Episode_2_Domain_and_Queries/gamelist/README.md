@@ -44,9 +44,9 @@
 - Use `@Service` annotation;
 - Inject `GameRepository` using `@Autowired`;
 - Implement methods to retrieve `all Games` (`findAll`);
-- Use `@Transactional`(readOnly = true) to ensure the method runs within a read-only transaction;
 - Implement methods to retrieve `Game by IDs` (`findById`);
 - Implement methods to retrieve `Games by Game List` (`findByGameList`);
+- Use `@Transactional`(readOnly = true) to ensure the method runs within a read-only transaction;
 - Implement the logic to retrieve games by list ID, and map the result to a list of `GameMinDTO` objects.
 #### 4.2 Game Controller Class Requirements for GameDTO and GameMinDTO:
 - Use `@RestController` annotation;
