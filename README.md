@@ -22,7 +22,7 @@
 
 👩‍🚀 Postman | version: `11.19`
 
-🐳 Docker Engine | Version `27.3.1`
+🐳 Docker Engine | version `27.3.1`
 
 :bullettrain_front: Railway | `Changelog #0219`
 
@@ -34,46 +34,99 @@
 ![Layered Architecture](https://github.com/souzafcharles/Java-Spring-Intensive/blob/main/logic-layered-architecture.png)
 ***
 ### Episode 1: [Structured Project](https://github.com/souzafcharles/Java-Spring-Intensive/tree/main/Episode_1_Structured_Project/gamelist)
-- Concepts:
-   - Web Systems and Resources;
-   - Client/Server, HTTP, JSON;
-   - RESTful Web API Standard;
-- Spring Rest Project Structure;
-- Entities and ORM;
-- Database Seeding;
-- Layered Pattern;
-- Controller, Service and Repository;
-- DTO Pattern.
+#### Concepts:
+- Web Systems and Resources;
+- Client/Server Architecture, HTTP, and JSON;
+- Designing and Implementing RESTful Web APIs;
+#### Spring Rest Project Structure:
+- Setting up a Spring Boot Project;
+- Using Maven for Dependency Management;
+#### Entities and ORM:
+- Defining Entity Classes;
+- Mapping Entities to Database Tables using JPA;
+#### Database Seeding:
+- Initializing Database with Sample Data;
+- Using `import.sql` File;
+#### Layered Pattern:
+- Understanding Layers (Controller, Service, Repository);
+- Implementing the Layered Architecture;
+#### Controller, Service, and Repository:
+- Creating Rest Controllers;
+- Implementing Business Logic in Service Layer;
+- Accessing Data with Repositories;
+#### DTO Pattern:
+- Using Data Transfer Objects (DTOs) for Data Manipulation;
+- Mapping between Entities and DTOs.
 ***
 ### Episode 2: [Domain and Queries](https://github.com/souzafcharles/Java-Spring-Intensive/tree/main/Episode_2_Domain_and_Queries/gamelist)
-- N-N Relationships; 
-- Association Class and Embedded ID; 
-- SQL Queries in Spring Data JPA; 
-- Projections.
+#### N-N Relationships:
+- Modeling Many-to-Many Relationships in JPA;
+- Using Join Tables for N-N relationships;
+#### Association Class and Embedded ID:
+- Creating Association Classes for Complex Relationships;
+- Using Embedded ID for Composite Keys;
+#### SQL Queries in Spring Data JPA:
+- Writing Custom Queries with `@Query`;
+- Using Query Methods;
+#### Projections:
+- Creating Projections to Fetch Partial Data;
+- Using Interfaces for JPA Projections.
 ***
 ### Episode 3: [Approval and CORS](https://github.com/souzafcharles/Java-Spring-Intensive/tree/main/Episode_3_Approval_and_CORS/gamelist)
-- Project Profiles (Dev, Test, and Prod);
-- Local Environment with Docker Compose;
-- Local Staging Process;
-- CI/CD Deployment Process;
-- CORS Configuration.
+#### Project Profiles (Dev, Test, and Prod):
+- Configuring Profiles for Different Environments;
+- Using `application.properties` and `application-{profile}.properties` Files;
+#### Local Environment with Docker Compose:
+- Setting up Local Staging Environment with Docker;
+- Using Docker Compose to Manage Services;
+#### Local Staging Process:
+- Testing Application in Staging Environment;
+- Validating Configurations Before Production Deployment;
+#### CI/CD Deployment Process:
+- Implementing Continuous Integration and Continuous Deployment Pipelines;
+- Automating Build and Deployment with Tools: GitHub and Railway;
+#### CORS Configuration:
+- Setting up Cross-Origin Resource Sharing (CORS);
+- Configuring CORS in Spring.
 ***
 ### Episode 4: [Special Endpoint](https://github.com/souzafcharles/Java-Spring-Intensive/tree/main/Episode_4_Special_Endpoint/gamelist)
-- Design and implementation of a special endpoint;
-- Update Operation in Spring;
-- Operations with List;
-- HTTP Verb and Idempotency.
-***
+* Design and Implementation of a Special Endpoint:
+  - Creating Custom Endpoints in Spring Boot;
+  - Handling Different HTTP Methods (POST and GET);
+* Update Operation in Spring:
+  - Performing Update Operations on Entity Data;
+  - Using `@Transactional` for Atomicity;
+* Operations with List:
+  - Manipulating Lists in Java;
+  - Updating List Positions;
+* HTTP Verb and Idempotency:
+  - Understanding Idempotent and Non-Idempotent HTTP Methods;
+  - Ensuring Idempotency in API Design.
+****
 ### Episode 5: Summary and Learning Conclusion
-#### What was Learned:
-- Building a Java Project with Spring Boot;
-- Back-end Web and REST API;
-- Layered Development Pattern;
-- Implementing a Domain Model;
-- Accessing a Database;
-- Implementing Business Logic;
-- Practical Application of Data Structures;
-- Best Practices and Patterns;
-- Setting up a Local Environment with Docker and Docker Compose.
+* What was Learned:
+  - Building a Java Project with Spring Boot:
+    - Setting up and Configuring a Spring Boot Project;
+  - Back-end Web and REST API:
+    - Designing and Building RESTful APIs;
+    - Using Spring MVC for Controller Logic;
+  - Layered Development Pattern:
+    - Implementing Layered Architecture (Controller, Service, Repository);
+  - Implementing a Domain Model:
+    - Creating and Managing Entities;
+    - Using JPA for ORM;
+  - Accessing a Database:
+    - Managing Database Connections;
+    - Performing CRUD Operations;
+  - Implementing Business Logic:
+    - Writing Business Logic in Service Layer;
+  - Practical Application of Data Structures:
+    - Using Lists, Maps, and Other Data Structures in Java;
+  - Best Practices and Patterns:
+    - Adopting Best Practices for Clean and Maintainable Code;
+    - Using Design Patterns in Software Development;
+  - Setting up a Local Environment with Docker and Docker Compose:
+    - Configuring Docker for Local Development;
+    - Managing Services with Docker Compose.
 ***
 ### :link: [Course Access](https://devsuperior.com.br/ijs-inscricao-org)
