@@ -1,6 +1,6 @@
 # Episode 3: Approval and CORS
 ## Project Requirements and Configurations:
-### 1 Development Profile (Approval Steps):
+### 1. Development Profile (Approval Steps):
 #### 1.1 Setting up `application-dev.properties` File with PostgreSQL Configurations:
 ```properties
 #spring.jpa.properties.jakarta.persistence.schema-generation.create-source=metadata
@@ -158,7 +158,7 @@ public class WebConfig {
 #### 1.7 Run app in `Dev mode` and validate:
 - Test app with Postman.
 ***
-### 2 Production Profile (CI/CD Deployment Steps):
+### 2. Production Profile (CI/CD Deployment Steps):
 #### 2.1 Configuring Environment Variables:
 - Define the required environment variables for the application:
 ```properties
