@@ -18,27 +18,30 @@ import java.util.List;
 @Service
 public class GameListService {
 
-    @Autowired
-    private GameListRepository gameListRepository;
+  @Autowired
+  private GameListRepository gameListRepository;
 
-    @Autowired
-    private GameRepository gameRepository;
+  @Autowired
+  private GameRepository gameRepository;
 
-    @Transactional(readOnly = true)
-    public List<GameListDTO> findAll() {
-        List<GameList> result = gameListRepository.findAll();
-        return result.stream().map(GameListDTO::new).toList();
+  @Transactional(readOnly = true)
+  public List < GameListDTO > findAll() {
+    List < GameList > result = gameListRepository.findAll();
+    return result.stream().map(GameListDTO::new).toList();
+  }
+
+  @Transactional
+  public void move(Long listId, int sourceIndex, int destinationIndex) {
+    List < GameMinProjection > list = gameRepository.searchByList(listId);
+    if (sourceIndex < 0 || sourceIndex >= list.size() || destinationIndex < 0 || destinationIndex >= list.size()) {
+      throw new IllegalArgumentException("Invalid source or destination index");
     }
-
-    @Transactional(readOnly = true)
-    public void move(Long listId, int sourceIndex, int destinationIndex) {
-        List<GameMinProjection> list = gameRepository.searchByList(listId);
-        GameMinProjection object = list.remove(sourceIndex);
-        list.add(destinationIndex, object);
-        int min = Math.min(sourceIndex, destinationIndex);
-        int max = Math.max(sourceIndex, destinationIndex);
-        for (int i = min; i <= max; i++) {
-            gameListRepository.updateBelongingPosition(listId, list.get(i).getId(), i);
-        }
+    GameMinProjection object = list.remove(sourceIndex);
+    list.add(destinationIndex, object);
+    int min = Math.min(sourceIndex, destinationIndex);
+    int max = Math.max(sourceIndex, destinationIndex);
+    for (int i = min; i <= max; i++) {
+      gameListRepository.updateBelongingPosition(listId, list.get(i).getId(), i);
     }
+  }
 }
