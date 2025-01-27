@@ -10,7 +10,6 @@ import com.souza.charles.gamelist.entities.GameList;
 import jakarta.persistence.Embeddable;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
-
 import java.util.Objects;
 
 @Embeddable

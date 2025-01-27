@@ -5,10 +5,8 @@ package com.souza.charles.gamelist.dto;
   Project done by: Charles Fernandes de Souza
   Date: January 24, 2025
  */
-
 import com.souza.charles.gamelist.entities.Game;
 import org.springframework.beans.BeanUtils;
-
 import java.io.Serial;
 import java.io.Serializable;
 

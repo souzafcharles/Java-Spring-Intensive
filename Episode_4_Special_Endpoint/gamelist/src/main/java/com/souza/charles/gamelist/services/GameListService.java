@@ -5,7 +5,6 @@ package com.souza.charles.gamelist.services;
   Project done by: Charles Fernandes de Souza
   Date: January 26, 2025
  */
-
 import com.souza.charles.gamelist.dto.GameListDTO;
 import com.souza.charles.gamelist.entities.GameList;
 import com.souza.charles.gamelist.projections.GameMinProjection;
@@ -14,7 +13,6 @@ import com.souza.charles.gamelist.repositories.GameRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
 import java.util.List;
 
 @Service

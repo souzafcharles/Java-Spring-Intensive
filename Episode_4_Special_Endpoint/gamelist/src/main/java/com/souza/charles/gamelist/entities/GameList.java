@@ -5,9 +5,7 @@ package com.souza.charles.gamelist.entities;
   Project done by: Charles Fernandes de Souza
   Date: January 24, 2025
  */
-
 import jakarta.persistence.*;
-
 import java.io.Serial;
 import java.io.Serializable;
 import java.util.Objects;

@@ -7,7 +7,6 @@ package com.souza.charles.gamelist.dto;
  */
 import com.souza.charles.gamelist.entities.GameList;
 import org.springframework.beans.BeanUtils;
-
 import java.io.Serial;
 import java.io.Serializable;
 

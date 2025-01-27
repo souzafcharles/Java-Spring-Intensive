@@ -115,7 +115,7 @@ Body -> raw -> JSON
 ```
 ***
 ### 7. Checking the H2 Database After Replacing Item Positions:
-- VVerify the result query to visualize the updated positions in the `TB_BELONGING`:
+- Verify the result query to visualize the updated positions in the `TB_BELONGING`:
 ```sql
 SELECT TB_BELONGING .*, TB_GAME.TITLE FROM TB_BELONGING
 INNER JOIN TB_GAME ON TB_GAME.ID = TB_BELONGING.GAME_ID

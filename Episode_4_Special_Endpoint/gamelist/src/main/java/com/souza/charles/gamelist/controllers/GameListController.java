@@ -5,7 +5,6 @@ package com.souza.charles.gamelist.controllers;
   Project done by: Charles Fernandes de Souza
   Date: January 26, 2025
  */
-
 import com.souza.charles.gamelist.dto.GameListDTO;
 import com.souza.charles.gamelist.dto.GameMinDTO;
 import com.souza.charles.gamelist.dto.ReplacementDTO;
@@ -13,7 +12,6 @@ import com.souza.charles.gamelist.services.GameListService;
 import com.souza.charles.gamelist.services.GameService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 
 @RestController

@@ -5,13 +5,11 @@ package com.souza.charles.gamelist.repositories;
   Project done by: Charles Fernandes de Souza
   Date: January 24, 2025
  */
-
 import com.souza.charles.gamelist.entities.Game;
 import com.souza.charles.gamelist.projections.GameMinProjection;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
-
 import java.util.List;
 
 @Repository

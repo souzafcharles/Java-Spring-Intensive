@@ -5,7 +5,6 @@ package com.souza.charles.gamelist.repositories;
   Project done by: Charles Fernandes de Souza
   Date: January 26, 2025
  */
-
 import com.souza.charles.gamelist.entities.GameList;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;

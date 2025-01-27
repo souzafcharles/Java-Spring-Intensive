@@ -5,10 +5,8 @@ package com.souza.charles.gamelist.dto;
   Project done by: Charles Fernandes de Souza
   Date: January 23, 2025
  */
-
 import com.souza.charles.gamelist.entities.Game;
 import com.souza.charles.gamelist.projections.GameMinProjection;
-
 import java.io.Serial;
 import java.io.Serializable;
 

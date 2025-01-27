@@ -5,12 +5,10 @@ package com.souza.charles.gamelist.entities;
   Project done by: Charles Fernandes de Souza
   Date: January 24, 2025
  */
-
 import com.souza.charles.gamelist.entities.pk.BelongingPK;
 import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
-
 import java.io.Serial;
 import java.io.Serializable;
 import java.util.Objects;
