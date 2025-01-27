@@ -204,3 +204,24 @@ cors.origins=${CORS_ORIGINS:http://localhost:5173,http://localhost:3000}
 - Use Postman to test the application’s APIs and ensure that all functionalities are working correctly.
 #### 2.4.8 Testing the CI/CD Pipeline:
 - Validate the configured CI/CD pipeline on Railway and GitHub. Ensure that all steps of the build and deployment processes execute as expected.
+***
+### Steps Checklist:
+#### Development Profile:
+:ballot_box_with_check: Setting up application-dev.properties with PostgreSQL configurations;<br/>
+:ballot_box_with_check: Configuring active profile, CORS, and application.properties for development;<br/>
+:ballot_box_with_check: Environment setup with Docker Compose for PostgreSQL and pgAdmin/DBeaver;<br/>
+:ballot_box_with_check: Creating project profiles in system.properties;<br/>
+:ballot_box_with_check: Generating database script to delete generated file (create.sql);<br/>
+:ballot_box_with_check: Configuring CORS with WebConfig class.
+#### Production Profile (CI/CD Deployment Steps):
+:ballot_box_with_check: Configuring environment variables for the application;<br/>
+:ballot_box_with_check:Setting up application-prod.properties with PostgreSQL configurations;<br/>
+:ballot_box_with_check: Configuring active profile, CORS, and application.properties for production;<br/>
+:ballot_box_with_check: Creating a Railway account;<br/>
+:ballot_box_with_check: Provisioning a PostgreSQL database server;<br/>
+:ballot_box_with_check: Creating and seeding the database;<br/>
+:ballot_box_with_check: Creating a Railway application linked to a GitHub repository;<br/>
+:ballot_box_with_check: Configuring environment variables in Railway;<br/>
+:ballot_box_with_check: Configuring the public domain for the application;<br/>
+:ballot_box_with_check: Testing the application with Postman;<br/>
+:ballot_box_with_check: Testing the CI/CD pipeline.
