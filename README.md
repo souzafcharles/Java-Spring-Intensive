@@ -7,8 +7,10 @@
 # :coffee: Java Spring Intensive
 
 :triangular_flag_on_post: Prof. Dr. Nelio Alves - [Dev Superior](https://devsuperior.com.br)
+***
+## Technologies Used:
 
-:black_nib: IDE used: `IntelliJ IDEA`
+:black_nib: IDE : `IntelliJ IDEA`
 
 :coffee: Java | version: `21`
 
@@ -16,9 +18,19 @@
 
 🗄️ H2 Database Engine | version: `23.232`
 
+🐘 PostgresSQL | version: `14-alpine`
+
 👩‍🚀 Postman | version: `11.19`
+
+🐳 Docker Engine | Version `27.3.1`
+
+:bullettrain_front: Railway | `Changelog #0219`
+
 ***
-## Logic Layered Architecture
+## Project API Rest Architecture:
+![Project API Rest Architecture](https://github.com/souzafcharles/Java-Spring-Intensive/blob/main/api-rest-architecture.png)
+***
+## Project Logic Layered Architecture:
 ![Layered Architecture](https://github.com/souzafcharles/Java-Spring-Intensive/blob/main/logic-layered-architecture.png)
 ***
 ### Episode 1: [Structured Project](https://github.com/souzafcharles/Java-Spring-Intensive/tree/main/Episode_1_Structured_Project/gamelist)
