@@ -22,7 +22,7 @@
 
 👩‍🚀 Postman | version: `11.19`
 
-🐳 Docker Engine | version `27.3.1`
+🐳 Docker Engine | version: `27.3.1`
 
 :bullettrain_front: Railway | `Changelog #0219`
 
@@ -96,12 +96,9 @@
 * Update Operation in Spring:
   - Performing Update Operations on Entity Data;
   - Using `@Transactional` for Atomicity;
-* Operations with List:
-  - Manipulating Lists in Java;
   - Updating List Positions;
 * HTTP Verb and Idempotency:
-  - Understanding Idempotent and Non-Idempotent HTTP Methods;
-  - Ensuring Idempotency in API Design.
+  - Understanding Idempotent and Non-Idempotent HTTP Methods.
 ****
 ### Episode 5: Summary and Learning Conclusion
 * What was Learned:
