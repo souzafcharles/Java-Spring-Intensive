@@ -75,7 +75,6 @@
 - Map the result to a list of `GameListDTO objects;
 - Implement Method to Retrieve a `GameList` by ID (`findById`);
 - Find the `GameList` by ID, and map it to a `GameListDTO` object;
-- Implement methods to retrieve all categories (`findByGameList`);
 - Implement the logic to retrieve games by game list, and map the result to a list of GameDTO or GameMinDTO objects.
 #### 5.4 GameList Controller Class Requirements for GameDTO and GameMinDTO:
 - Use `@RestController` annotation;
