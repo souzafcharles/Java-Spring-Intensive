@@ -63,7 +63,7 @@ spring.jpa.properties.hibernate.format_sql=true
 - Inject `GameRepository` using `@Autowired`;
 - Implement methods to retrieve all games (`findAll`);
 #### 4.5 Game Controller Class Requirements for GameMinDTO:
-- Use `@RestController` annotation.
+- Use `@RestController` annotation;
 - Map requests (`@RequestMapping`) to the `/games` endpoint;
 - Inject `GameService` using `@Autowired`;
 - Implement a method to handle `GET` requests and return all games (`@GetMapping`).
