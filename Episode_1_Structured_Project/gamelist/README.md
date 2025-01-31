@@ -40,7 +40,7 @@ spring.jpa.show-sql=true
 spring.jpa.properties.hibernate.format_sql=true
 ```
 #### 4. Game and GameMinDTO Entities, Repository, Service and Controller Classes:
-#### 4. 1 Entity Class Requirements for Game:
+#### 4.1 Entity Class Requirements for Game:
 - Create the `Game` Entity Class;
 - Annotate the class with `@Entity` and `@Table`(name = "tb_game") to map it to the database table;
 - Basic Attributes;
