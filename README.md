@@ -8,23 +8,17 @@
 
 :triangular_flag_on_post: Prof. Dr. Nelio Alves - [Dev Superior](https://devsuperior.com.br)
 ***
-## Technologies Used:
-
-:black_nib: IDE : `IntelliJ IDEA`
-
-:coffee: Java | version: `21`
-
-:leaves: Spring Boot | version: `3.4.2`
-
-🗄️ H2 Database Engine | version: `23.232`
-
-🐘 PostgresSQL | version: `14-alpine`
-
-👩‍🚀 Postman | version: `11.19`
-
-🐳 Docker Engine | version: `27.3.1`
-
-:bullettrain_front: Railway | `Changelog #0219`
+## Backend Project Stack:
+| Technology            | Version          | Description                                 |
+|-----------------------|------------------|---------------------------------------------|
+| 📐 IntelliJ IDEA      | `2024.3`         | Integrated Development Environment (IDE)    |
+| ☕ Java               | `21`             | Backend programming language                |
+| 🌱 Spring Boot        | `3.4.2`          | Framework for creating Spring applications  |
+| 🗄️ H2 Database Engine | `23.232`          | In-memory relational database for testing   |
+| 🐘 PostgreSQL        | `14-alpine`       | Relational database management system       |
+| 👩‍🚀 Postman           | `11.19`           | API testing and development tool            |
+| 🐳 Docker Engine     | `27.3.1`          | Containerisation and virtualisation tool    |
+| 🚅 Railway           | `Changelog #0219` | Deployment platform for applications        |
 
 ***
 ## Project API Rest Architecture:
